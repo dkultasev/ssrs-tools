@@ -1,0 +1,44 @@
+{
+	"name": "ssrs-tools",
+	"displayName": "SSRS tools",
+	"description": "Set of tools to work with SSRS and Power BI",
+	"version": "0.0.1",
+	"engines": {
+		"vscode": "^1.33.0"
+	},
+	"categories": [
+		"Other"
+	],
+	"activationEvents": [
+		"onCommand:extension.reportSummaryOnCurrentFile"
+	],
+	"main": "./out/extension.js",
+	"contributes": {
+		"commands": [
+			{
+				"command": "extension.reportSummaryOnCurrentFile",
+				"title": "SSRS: Show report summary for current file"
+			}
+		]
+	},
+	"scripts": {
+		"vscode:prepublish": "npm run compile",
+		"compile": "tsc -p ./",
+		"watch": "tsc -watch -p ./",
+		"postinstall": "node ./node_modules/vscode/bin/install",
+		"test": "mocha"
+	},
+	"devDependencies": {
+		"typescript": "^3.3.1",
+		"vscode": "^1.1.28",
+		"tslint": "^5.12.1",
+		"@types/node": "^10.12.21",
+		"@types/mocha": "^2.2.42"
+	},
+	"dependencies": {
+		"edge": "^7.10.1",
+		"msnodesqlv8": "^0.7.1",
+		"mssql": "^5.1.0",
+		"tedious": "^6.1.1"
+	}
+}
